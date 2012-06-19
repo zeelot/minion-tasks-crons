@@ -16,7 +16,7 @@ class Minion_Task_Crons_Update extends Minion_Task {
 		}
 
 		$filename = $this->unique_filename();
-		$pattern = '/^'.preg_quote($start_section).'\n(.*\n)*'.preg_quote($end_section).'$/m';
+		$pattern = '/^'.preg_quote($start_section, '/').'\n(.*\n)*'.preg_quote($end_section, '/').'$/m';
 
 		if (preg_match($pattern, $current, $matches))
 		{
